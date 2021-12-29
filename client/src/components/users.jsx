@@ -19,7 +19,6 @@ class Movies extends Component {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Age</th>
               <th>Email</th>
             </tr>
           </thead>
@@ -27,7 +26,6 @@ class Movies extends Component {
             {this.state.users.map((user) => (
               <tr key={user._id}>
                 <td>{user.name}</td>
-                <td>{user.age}</td>
                 <td>{user.email}</td>
               </tr>
             ))}
