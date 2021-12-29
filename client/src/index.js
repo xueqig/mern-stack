@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
-import Counter from './components/counter';
+import Users from './components/users';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter />
+    <Users />
   </React.StrictMode>,
   document.getElementById('root'),
 );
