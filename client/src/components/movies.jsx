@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
-class Users extends Component {
+class Movies extends Component {
   state = {
     users: [],
   };
 
   async componentDidMount() {
-    Axios.get('http://localhost:5000/users').then((res) => {
+    Axios.get('http://localhost:5000/movies').then((res) => {
       this.setState({ users: res.data });
     });
   }
@@ -18,15 +18,17 @@ class Users extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
+              <th>Title</th>
+              <th>Rated</th>
+              <th>Year</th>
             </tr>
           </thead>
           <tbody>
             {this.state.users.map((user) => (
               <tr key={user._id}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td>{user.title}</td>
+                <td>{user.rated}</td>
+                <td>{user.year}</td>
               </tr>
             ))}
           </tbody>
@@ -36,4 +38,4 @@ class Users extends Component {
   }
 }
 
-export default Users;
+export default Movies;

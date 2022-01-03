@@ -4,10 +4,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import Users from './components/users';
+import Movies from './components/movies';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Users />
+    <Movies />
   </React.StrictMode>,
   document.getElementById('root'),
 );
