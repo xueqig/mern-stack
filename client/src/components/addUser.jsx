@@ -6,7 +6,7 @@ class AddUser extends Component {
     data: { name: '', email: '', age: '', password: '' },
   };
 
-  handleLogin = async (event) => {
+  handleAdd = async (event) => {
     event.preventDefault();
     Axios.post('http://localhost:5000/users', this.state.data).then((res) =>
       console.log(res),
@@ -22,7 +22,7 @@ class AddUser extends Component {
   render() {
     const { data } = this.state;
     return (
-      <form onSubmit={this.handleLogin}>
+      <form onSubmit={this.handleAdd}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name

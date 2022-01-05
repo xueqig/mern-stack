@@ -12,6 +12,14 @@ class Users extends Component {
     });
   }
 
+  handleDelete = (user) => {
+    Axios.delete('http://localhost:5000/users/' + user._id).then((res) => {
+      Axios.get('http://localhost:5000/users').then((res) => {
+        this.setState({ users: res.data });
+      });
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -20,6 +28,7 @@ class Users extends Component {
             <tr>
               <th>Name</th>
               <th>Email</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -27,6 +36,15 @@ class Users extends Component {
               <tr key={user._id}>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
+                <td>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => this.handleDelete(user)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
