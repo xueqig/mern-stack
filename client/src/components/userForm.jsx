@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
-class AddUser extends Component {
+class UserForm extends Component {
   state = {
     data: { name: '', email: '', age: '', password: '' },
   };
+
+  componentDidMount() {
+    console.log('props:', this.props.params);
+  }
 
   handleAdd = async (event) => {
     event.preventDefault();
@@ -79,4 +83,4 @@ class AddUser extends Component {
   }
 }
 
-export default AddUser;
+export default UserForm;

@@ -4,7 +4,7 @@ import './App.css';
 import Users from './components/users';
 import Movies from './components/movies';
 import NavBar from './components/navBar';
-import AddUser from './components/addUser';
+import UserForm from './components/userForm';
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
           <Routes>
             <Route path="/movies" element={<Movies />} />
             <Route path="/users" element={<Users />} />
-            <Route path="/addUser" element={<AddUser />} />
+            <Route path="/users/:id" element={<UserForm />} />
           </Routes>
         </main>
       </React.Fragment>

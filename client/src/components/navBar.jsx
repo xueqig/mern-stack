@@ -27,7 +27,7 @@ class NavBar extends Component {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="/addUser">
+                <a className="nav-link" aria-current="page" href="/users/new">
                   Add User
                 </a>
               </li>

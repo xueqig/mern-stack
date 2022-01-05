@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 class Users extends Component {
@@ -28,6 +29,7 @@ class Users extends Component {
             <tr>
               <th>Name</th>
               <th>Email</th>
+              <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -36,6 +38,13 @@ class Users extends Component {
               <tr key={user._id}>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
+                <td>
+                  <Link to={`/users/${user._id}`} params={user}>
+                    <button type="button" className="btn btn-primary">
+                      Edit
+                    </button>
+                  </Link>
+                </td>
                 <td>
                   <button
                     type="button"
